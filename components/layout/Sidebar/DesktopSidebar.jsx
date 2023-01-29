@@ -15,6 +15,7 @@ import Wallets from './Wallets/Wallets'
 import WallpaperInfo from './WallpaperInfo'
 
 import { useStoreActionsCD, useStoreStateCD } from 'store/hooks'
+import ProtonAuthProvider, { useProtonAuth } from '@/components/providers/AuthProvider'
 
 const DesktopSidebar = ({
   walletConnected,
@@ -30,7 +31,7 @@ const DesktopSidebar = ({
   const wallets = useStoreStateCD(state => state.wallet.wallets)
 
   const [walletIsConnected, setWalletIsConnected] = useState(false)
-  const connectWallet = useStoreActionsCD(state => state.wallet.connectWallet)
+  const protonCtx = useProtonAuth();
 
   useEffect(() => {
     if (wallets.length > 0) {
@@ -106,7 +107,7 @@ const DesktopSidebar = ({
           ) : (
             <WalletConnect
               onClick={
-                () => connectWallet()
+                () => protonCtx.signIn()
                 // setActionsVisible(false)
               }
               walletConnected={walletIsConnected}
