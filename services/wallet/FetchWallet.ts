@@ -5,7 +5,7 @@ export async function fetchWallet(actorName: string): Promise<actor.IWalletWealt
 
     let config = {
     method: 'get',
-    url: `${process.env.NEXT_PUBLIC_BASE_DOMAIN}/${actorName}`,
+    url: `${process.env.NEXT_PUBLIC_BASE_DOMAIN}/accounts/${actorName}`,
     headers: { 
         'Accept': 'application/json', 
         'Cookie': '_us=1666705972; ad-con=%7B%26quot%3Bdate%26quot%3B%3A%26quot%3B2022-10-24%26quot%3B%2C%26quot%3Bads%26quot%3B%3A%5B%5D%7D; _us=1672185521; ad-con=%7B%26quot%3Bdate%26quot%3B%3A%26quot%3B2022-12-26%26quot%3B%2C%26quot%3Bads%26quot%3B%3A%5B%5D%7D; mode=day; src=1'
