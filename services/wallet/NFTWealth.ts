@@ -60,3 +60,4 @@ function computeTotalWealth(nfts: NFT.INftCollection[]):IWealth[] {
         return prev
     },[])
 }
+
