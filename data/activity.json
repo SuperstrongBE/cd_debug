@@ -1,0 +1,110 @@
+[
+  {
+    "wallet": "terra2xan73u...xy0hv",
+    "name": "EasyCrypto",
+    "icon": "",
+    "type": "airdrop",
+    "currency": "ANC",
+    "amount": "0.00",
+    "amount_ust": "0.00",
+    "date": "April 2nd 2022",
+    "time": "12:21PM",
+    "status": "Unseen"
+  },
+  {
+    "wallet": "terra2xan73u...xy0hv",
+    "name": "dokwon.ust",
+    "icon": "",
+    "type": "transfer",
+    "currency": "Luna",
+    "amount": "0.00",
+    "amount_ust": "0.00",
+    "date": "April 2nd 2022",
+    "time": "12:21PM",
+    "status": "Unseen"
+  },
+  {
+    "wallet": "terra2xan73u...xy0hv",
+    "name": "",
+    "icon": "",
+    "type": "airdrop",
+    "currency": "ANC",
+    "amount": "0.00",
+    "amount_ust": "0.00",
+    "date": "April 2nd 2022",
+    "time": "12:21PM",
+    "status": "Seen"
+  },
+  {
+    "wallet": "terra2xan73u...xy0hv",
+    "name": "EasyCrypto",
+    "icon": "",
+    "type": "airdrop",
+    "currency": "ANC",
+    "amount": "0.00",
+    "amount_ust": "0.00",
+    "date": "April 2nd 2022",
+    "time": "12:21PM",
+    "status": "Seen"
+  },
+  {
+    "wallet": "terra2xan73u...xy0hv",
+    "name": "EasyCrypto",
+    "icon": "",
+    "type": "airdrop",
+    "currency": "ANC",
+    "amount": "0.00",
+    "amount_ust": "0.00",
+    "date": "April 1st 2022",
+    "time": "12:21PM",
+    "status": "Seen"
+  },
+  {
+    "wallet": "terra2xan73u...xy0hv",
+    "name": "EasyCrypto",
+    "icon": "",
+    "type": "airdrop",
+    "currency": "ANC",
+    "amount": "0.00",
+    "amount_ust": "0.00",
+    "date": "April 1st 2022",
+    "time": "12:21PM",
+    "status": "Seen"
+  },
+  {
+    "wallet": "terra2xan73u...xy0hv",
+    "name": "EasyCrypto",
+    "icon": "",
+    "type": "airdrop",
+    "currency": "ANC",
+    "amount": "0.00",
+    "amount_ust": "0.00",
+    "date": "April 1st 2022",
+    "time": "12:21PM",
+    "status": "Seen"
+  },
+  {
+    "wallet": "terra2xan73u...xy0hv",
+    "name": "EasyCrypto",
+    "icon": "",
+    "type": "airdrop",
+    "currency": "ANC",
+    "amount": "0.00",
+    "amount_ust": "0.00",
+    "date": "April 1st 2022",
+    "time": "12:21PM",
+    "status": "Seen"
+  },
+  {
+    "wallet": "terra2xan73u...xy0hv",
+    "name": "EasyCrypto",
+    "icon": "",
+    "type": "airdrop",
+    "currency": "ANC",
+    "amount": "0.00",
+    "amount_ust": "0.00",
+    "date": "April 1st 2022",
+    "time": "12:21PM",
+    "status": "Seen"
+  }
+]

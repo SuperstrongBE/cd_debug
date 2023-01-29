@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .theme-default {
+    --tint-purple: 158 119 237;
+    --tint-blue: 4 131 199;
+
+    // TODO Make these colors globally available but only apply them with the classes
+
+    &.tint-blue {
+      --color-primary-50: 239 246 255;
+      --color-primary-100: 219 234 254;
+      --color-primary-200: 191 219 254;
+      --color-primary-300: 147 197 253;
+      --color-primary-400: 96 165 250;
+      --color-primary-500: 59 130 246;
+      --color-primary-600: 37 99 235;
+      --color-primary-700: 29 78 216;
+      --color-primary-800: 30 64 175;
+      --color-primary-900: 30 58 138;
+      --color-primary-950: 8 30 67;
+      --color-primary-1000: 5 18 39;
+
+      --color-secondary-50: var(--color-primary-50);
+      --color-secondary-100: var(--color-primary-100);
+      --color-secondary-200: var(--color-primary-200);
+      --color-secondary-300: var(--color-primary-300);
+      --color-secondary-400: var(--color-primary-400);
+      --color-secondary-500: var(--color-primary-500);
+      --color-secondary-600: var(--color-primary-600);
+      --color-secondary-700: var(--color-primary-700);
+      --color-secondary-800: var(--color-primary-800);
+      --color-secondary-900: var(--color-primary-900);
+      --color-secondary-950: var(--color-primary-950);
+      --color-secondary-1000: var(--color-primary-1000);
+
+      --color-primary: var(--color-primary-500);
+      --color-secondary: var(--color-secondary-500);
+
+      --color-title-light: var(--color-slate-900);
+      --color-title-dark: var(--color-slate-50);
+    }
+    &.tint-purple {
+      --color-primary-50: 249 245 255;
+      --color-primary-100: 244 235 255;
+      --color-primary-200: 233 215 254;
+      --color-primary-300: 214 187 251;
+      --color-primary-400: 214 187 251;
+      --color-primary-500: 182 146 246;
+      --color-primary-600: 158 119 237;
+      --color-primary-700: 127 86 217;
+      --color-primary-800: 105 65 198;
+      --color-primary-900: 66 48 125;
+      --color-primary-950: 32 20 70;
+      --color-primary-1000: 18 10 41;
+
+      --color-secondary-50: var(--color-primary-50);
+      --color-secondary-100: var(--color-primary-100);
+      --color-secondary-200: var(--color-primary-200);
+      --color-secondary-300: var(--color-primary-300);
+      --color-secondary-400: var(--color-primary-400);
+      --color-secondary-500: var(--color-primary-500);
+      --color-secondary-600: var(--color-primary-600);
+      --color-secondary-700: var(--color-primary-700);
+      --color-secondary-800: var(--color-primary-800);
+      --color-secondary-900: var(--color-primary-900);
+      --color-secondary-950: var(--color-primary-950);
+      --color-secondary-1000: var(--color-primary-1000);
+
+      --color-primary: var(--color-primary-500);
+      --color-secondary: var(--color-secondary-500);
+
+      --color-title-light: var(--color-primary-1000);
+      --color-title-dark: var(--color-primary-50);
+    }
+  }
+}

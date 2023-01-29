@@ -7,6 +7,7 @@ import React, {
   } from 'react';
   import ProtonWebSDK,{ ProtonWebLink, Link,LinkSession } from '@proton/web-sdk';
 
+
 export  interface AuthState {
     token?: string;
     user?: object;
@@ -33,7 +34,6 @@ export default function ProtonAuthProvider({ children }:{children:any}) {
     const [session, setSession] = useState<LinkSession>();
     const [loading, setLoading] = useState(true);
   
-    console.log( process.env.NEXT_PUBLIC_PROTON_ENDPOINTS!)
     async function signIn ():Promise<{session:LinkSession | undefined,link:Link | ProtonWebLink | undefined} | undefined>{
 
       try {
@@ -52,7 +52,7 @@ export default function ProtonAuthProvider({ children }:{children:any}) {
           }
         }
         )
-        console.log (session,link)
+      
         return {
           session,
           link

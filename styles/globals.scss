@@ -1,0 +1,507 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Carbon';
+    src: url('../fonts/CARBONBold.woff') format('woff'),
+      url('../fonts/CARBONBoldItalic.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'Carbon';
+    src: url('../fonts/CARBONRegular.woff') format('woff'),
+      url('../fonts/CARBONRegularItalic.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'Carbon';
+    src: url('../fonts/CARBONThin.woff') format('woff'),
+      url('../fonts/CARBONThinItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-style: italic;
+  }
+
+  ::selection {
+    @apply text-slate-50;
+    @apply bg-primary-600/80;
+  }
+
+  :root {
+    --variable-padding-sm: clamp(1rem, 1vw, 2rem);
+    --variable-padding-md: clamp(1.5rem, 2vw, 2rem);
+    --variable-padding-lg: clamp(1.5rem, 2vw, 4rem);
+    --variable-padding-xl: clamp(1.5rem, 2vw, 4rem);
+    --color-dev: theme('colors.red.500');
+  }
+
+  html {
+    @apply scroll-pt-6 bg-primary-1000 motion-safe:scroll-smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-transparent;
+  }
+
+  details {
+    ::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  .disableAnimations * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@layer utilities {
+  .dev {
+    @apply bg-red-500/20;
+  }
+
+  code {
+    @apply inline rounded bg-slate-200 px-1 font-mono text-sm uppercase leading-5 text-slate-700 opacity-100 dark:bg-slate-50/10 dark:text-slate-50;
+  }
+  strong {
+    @apply font-semibold;
+  }
+  .h-screen-safe {
+    height: 100vh;
+    height: 100dvh;
+  }
+  .min-h-screen-safe {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .py-safe {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .px-safe {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .gutter {
+    @apply md:gap-6 2xl:gap-8 mobile:gap-4;
+  }
+  .gutter-x {
+    @apply md:gap-x-6 2xl:gap-x-8 mobile:gap-x-4;
+  }
+  .gutter-y {
+    @apply md:gap-y-6 2xl:gap-y-8 mobile:gap-y-4;
+  }
+
+  // Automatic grid that responds to container size
+
+  .grid-cols-auto {
+    grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+  }
+
+  .grid-cols-auto-three {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(12rem, 100%), 1fr)
+    ) !important;
+  }
+
+  .grid-cols-auto-four {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(8rem, 100%), 1fr)
+    ) !important;
+  }
+}
+
+@layer components {
+  .Image {
+    -webkit-backface-visibility: hidden;
+
+    & > div > span {
+      // This fixes an issue where on Safari a child with transform clips through the border radius of the grand-parents
+      @apply rounded-[inherit];
+    }
+
+    span {
+      @apply align-middle;
+    }
+  }
+
+  // TODO this could be a theme variable in config
+  .bg-blur {
+    @apply backdrop-blur-xl;
+  }
+
+  .bg-shadow-inset {
+    box-shadow: inset 0 1px 0 0 rgba(203 213 225 / 0.1);
+  }
+
+  .bg-shadow-top-dark {
+    box-shadow: 0 -10px 10px -3px
+        rgb(var(--color-primary-1000) / theme('opacity.20')),
+      0 -2px 4px 0 rgb(0 0 0 / 0.075);
+  }
+  .bg-shadow-top-light {
+    box-shadow: 0 -10px 10px -3px
+        rgb(var(--color-primary-1000) / theme('opacity.20')),
+      0 -2px 4px 0 rgb(0 0 0 / 0.075);
+  }
+
+  .soft-filter-shadow {
+    filter: drop-shadow(0px 0.0625rem 0.09rem theme('colors.slate.900' / 15%))
+      drop-shadow(0rem 0.2rem 1.5rem theme('colors.slate.50' / 5%));
+    opacity: 0.975;
+  }
+
+  // HEADER
+
+  .mobile-header {
+    @apply before:absolute before:bottom-0 before:right-0 before:left-0 before:block before:h-[1px] before:bg-slate-50/[0.04];
+  }
+
+  // MAIN
+
+  .MainGap {
+    @apply md:gap-6 2xl:gap-8 mobile:gap-4;
+  }
+
+  // sidebar
+  .mobile-sidebar {
+    box-shadow: inset -1px 0 0 0 rgba(203 213 225 / 0.05),
+      32px 10px 20px -24px rgb(var(--color-primary-1000) / theme('opacity.20')),
+      1px 4px 8px 0px rgb(var(--color-primary-1000) / theme('opacity.40'));
+    padding-top: calc(theme('padding.12') + 2px);
+    padding-bottom: calc(
+      theme('padding.4') + calc(env(safe-area-inset-bottom) / 2 - 2px)
+    );
+
+    .mobile-sidebar-content {
+    }
+  }
+
+  .SidebarLiquidity {
+    .SidebarLiquidityHeader {
+      box-shadow: inset 0 -1px 0 0 rgb(var(--color-primary-50) /
+              theme('opacity.3')),
+        0 1px 3px rgb(var(--color-primary-1000) / theme('opacity.10'));
+    }
+  }
+
+  // PAGE PADDING
+
+  .page-padding {
+    @apply mobile:mobile-page-padding px-safe;
+    // padding-left: 100dvw;
+  }
+
+  // Mobile
+
+  .mobile-page-padding {
+    padding-top: calc(theme('padding.12') + 2px);
+    padding-bottom: calc(theme('padding.20') + env(safe-area-inset-bottom));
+  }
+
+  @media all and (display-mode: fullscreen) {
+    /* This is for iOS/Android PWA version */
+    .mobile-page-padding {
+      padding-bottom: calc(theme('padding.16') + env(safe-area-inset-bottom));
+    }
+  }
+
+  // ACTIONS
+  // Mobile
+
+  .mobile-actions {
+    bottom: calc(theme('margin.20') + env(safe-area-inset-bottom));
+  }
+
+  // NAVIGATION
+  // Mobile
+  .mobile-navigation {
+    @apply bg-shadow-top-light dark:bg-shadow-top-dark before:absolute before:top-0 before:right-0 before:left-0 before:block before:h-[1px] before:bg-slate-50/[0.04];
+    padding-bottom: calc(env(safe-area-inset-bottom) / 2);
+  }
+
+  .mobile-item-active {
+    .mobile-item-active-bg {
+      @apply scale-100 bg-slate-800/25 will-change-transform dark:bg-slate-800/25;
+    }
+  }
+
+  .desktop-navigation-item {
+    @apply text-primary-50/60 outline-none hover:text-primary-50 hover:ring-2 hover:ring-primary/50 hover:ring-offset-2 hover:ring-offset-primary-1000 focus:text-primary-50 focus:ring-2 focus:ring-primary/50 focus:ring-primary focus:ring-offset-2 focus:ring-offset-primary-1000 focus:transition-none active:bg-primary-400/20 dark:text-primary-50/40 hover:dark:text-primary-50;
+
+    path {
+      @apply stroke-primary-50 dark:stroke-primary-50;
+    }
+  }
+
+  .desktop-navigation-item-active {
+    @apply bg-primary/30 text-primary-50 ring-2 ring-primary ring-offset-2 ring-offset-primary-1000 hover:ring-primary dark:text-primary-50;
+
+    div {
+      @apply opacity-100 dark:opacity-100;
+    }
+  }
+
+  .mainNavigation {
+    .disabled {
+      button {
+        cursor: default !important;
+        pointer-events: none !important;
+      }
+    }
+  }
+
+  // BUTTONS
+  .button {
+    outline-color: theme('colors.primary.DEFAULT');
+  }
+
+  // Stack of NFTs on the Welcome page
+  .WelcomeNFTs {
+    .WelcomeNFT {
+      span {
+        @apply relative z-10;
+      }
+
+      img {
+        @apply relative z-10;
+        @apply duration-[600ms];
+        transform: translate3d(0, 0, 0);
+      }
+
+      &:nth-child(1) {
+        @apply duration-[900ms];
+      }
+      &:nth-child(2) {
+        @apply duration-[600ms];
+      }
+      &:nth-child(3) {
+        @apply duration-[300ms];
+      }
+      &:nth-child(4) {
+        @apply duration-[600ms];
+      }
+      &:nth-child(5) {
+        @apply duration-[900ms];
+      }
+    }
+  }
+
+  .fadeTop {
+    -webkit-mask-image: linear-gradient(0deg, #000 97%, transparent);
+    mask-image: linear-gradient(0deg, #000 97%, transparent);
+  }
+
+  .fadeTopXL {
+    -webkit-mask-image: linear-gradient(0deg, #000 50%, transparent);
+    mask-image: linear-gradient(0deg, #000 50%, transparent);
+  }
+
+  .fadeBottom {
+    -webkit-mask-image: linear-gradient(180deg, #000 95%, transparent);
+    mask-image: linear-gradient(180deg, #000 95%, transparent);
+  }
+
+  .fadeBottomXL {
+    -webkit-mask-image: linear-gradient(180deg, #000 50%, transparent);
+    mask-image: linear-gradient(180deg, #000 50%, transparent);
+  }
+
+  .fadeBottom2XL {
+    -webkit-mask-image: linear-gradient(180deg, #000 25%, transparent);
+    mask-image: linear-gradient(180deg, #000 25%, transparent);
+  }
+
+  .fadeRight {
+    -webkit-mask-image: linear-gradient(45deg, #000 50%, transparent);
+    mask-image: linear-gradient(45deg, #000 50%, transparent);
+  }
+
+  .fadeRightSm {
+    -webkit-mask-image: linear-gradient(45deg, #000 70%, transparent);
+    mask-image: linear-gradient(45deg, #000 70%, transparent);
+  }
+
+  .fadeSep {
+    background: linear-gradient(
+      180deg,
+      rgba(226, 232, 240, 0) 0%,
+      rgba(226, 232, 240, 0.6237) 28.2%,
+      #e2e8f0 48.15%,
+      rgba(226, 232, 240, 0.6543) 70.22%,
+      rgba(226, 232, 240, 0) 100%
+    );
+  }
+
+  .speechBubble {
+    position: relative;
+    z-index: 10;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border: 9px solid transparent;
+      border-left: 0;
+      border-top: 0;
+      margin-top: -15px;
+      margin-left: -9px;
+      @apply border-r-slate-300 dark:border-r-slate-400/50;
+    }
+  }
+}
+
+.ScrollAreaRoot {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  --scrollbar-size: 0.85rem;
+}
+
+.ScrollAreaViewport {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.ScrollAreaScrollbar {
+  display: flex;
+  /* ensures no selection */
+  user-select: none;
+  /* disable browser handling of all panning and zooming gestures on touch devices */
+  touch-action: none;
+  padding: 0.175rem;
+  transition: background 160ms ease-out;
+}
+.ScrollAreaScrollbar:hover {
+  /* background: rgba(0, 0, 0, 0.2); */
+}
+.ScrollAreaScrollbar[data-orientation='vertical'] {
+  width: var(--scrollbar-size);
+}
+.ScrollAreaScrollbar[data-orientation='horizontal'] {
+  flex-direction: column;
+  height: var(--scrollbar-size);
+}
+
+.ScrollAreaThumb {
+  flex: 1;
+  /* background: linear-gradient(
+    0deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 154, 0, 1) 10%,
+    rgba(208, 222, 33, 1) 20%,
+    rgba(79, 220, 74, 1) 30%,
+    rgba(63, 218, 216, 1) 40%,
+    rgba(47, 201, 226, 1) 50%,
+    rgba(28, 127, 238, 1) 60%,
+    rgba(95, 21, 242, 1) 70%,
+    rgba(186, 12, 248, 1) 80%,
+    rgba(251, 7, 217, 1) 90%,
+    rgba(255, 0, 0, 1) 100%
+  );
+  */
+  border-radius: var(--scrollbar-size);
+  position: relative;
+}
+/* increase target size for touch devices https://www.w3.org/WAI/WCAG21/Understanding/target-size.html */
+.ScrollAreaThumb::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* WebAuth Modal */
+
+.wallet-selector.wallet-selector-active {
+  @apply bg-transparent bg-none;
+
+  * {
+    @apply font-sans text-slate-800 dark:text-slate-50;
+  }
+
+  .wallet-selector-title {
+    @apply -mb-2.5 -mt-5 text-2xl font-bold text-slate-900 dark:text-slate-50;
+  }
+
+  .wallet-selector-subtitle {
+    @apply hidden;
+  }
+
+  .wallet-selector-inner {
+    @apply relative bg-white dark:bg-slate-700/[0.85] dark:backdrop-blur-xl desktop:w-[420px];
+
+    border-radius: 12px;
+
+    box-shadow: 0px 0px 0px 1px rgba(16, 24, 40, 0.1),
+      0px 14px 16px -12px rgba(6, 14, 30, 0.15),
+      0px 25px 50px -12px rgba(16, 24, 40, 0.25),
+      0px 0px 140px 56px rgba(15, 23, 42, 0.25) !important;
+
+    &:before {
+      content: '';
+
+      @apply pointer-events-none absolute top-0 left-0  h-full w-full rounded-xl ring-1 ring-inset ring-slate-50/5;
+    }
+
+    .wallet-selector-connect {
+      @apply bg-transparent bg-none;
+    }
+  }
+
+  .wallet-selector-wallet {
+    @apply mb-3 rounded-lg border-none py-3 px-2 pr-4 shadow shadow-slate-400/10 ring-1 ring-slate-400/30 hover:ring-slate-400/50 dark:bg-slate-400/10;
+  }
+
+  .wallet-selector-logo {
+    @apply bg-transparent dark:opacity-100 dark:brightness-[2.25] dark:drop-shadow-lg dark:hue-rotate-[-40deg] dark:saturate-[0.925];
+
+    //hue-rotate-[-35deg]
+
+    // dark:opacity-80 dark:brightness-0 dark:drop-shadow-md dark:invert dark:saturate-0
+  }
+
+  .wallet-selector-right-arrow {
+    @apply dark:opacity-80 dark:brightness-150;
+  }
+
+  .wallet-selector-footnote {
+    @apply mt-4;
+
+    // @apply mt-4 flex h-[80px] w-[420px] items-center justify-center gap-6 rounded-lg bg-white/40 py-6 opacity-100;
+  }
+
+  .wallet-selector-wallet-name {
+    @apply ml-3 text-base font-medium text-slate-900 dark:text-slate-200/80;
+  }
+
+  .wallet-selector-tos-agreement {
+    @apply my-6 font-sans text-sm text-slate-700 dark:text-slate-300/70;
+
+    .wallet-selector-tos-link {
+      @apply text-slate-900 underline dark:text-slate-200/70;
+    }
+  }
+}
