@@ -6,6 +6,7 @@ import React, {
     useContext
   } from 'react';
   import ProtonWebSDK,{ ProtonWebLink, Link,LinkSession } from '@proton/web-sdk';
+import { useStoreActionsCD } from '@/store/hooks';
 
 
 export  interface AuthState {
@@ -32,7 +33,9 @@ export  interface AuthState {
 export default function ProtonAuthProvider({ children }:{children:any}) {
 
     const [session, setSession] = useState<LinkSession>();
-    const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
+  
+  const { fetchActorInfo,fetchActorWealth,addActorWallet} = useStoreActionsCD(actions =>actions.wallet)
   
     async function signIn ():Promise<{session:LinkSession | undefined,link:Link | ProtonWebLink | undefined} | undefined>{
 
@@ -53,22 +56,19 @@ export default function ProtonAuthProvider({ children }:{children:any}) {
         }
         )
       
-        return {
-          session,
-          link
-        }
-        // if (session) {
-        //   addActorWallet({
-        //     active: true,
-        //     actorName: session.auth.actor.toString(),
-        //     link: link,
-        //     session: session
-        //   })
-        //   fetchActorInfo(session.auth.actor.toString())
-        //   fetchActorWealth(session.auth.actor.toString())
+        
+        if (session) {
+          addActorWallet({
+            active: true,
+            actorName: session.auth.actor.toString(),
+            link: link,
+            session: session
+          })
+          fetchActorInfo(session.auth.actor.toString())
+          fetchActorWealth(session.auth.actor.toString())
 
-        //   return session;
-        // }
+          return { link, session };
+        }
       } catch (e) {
         console.log(e)
       }      
