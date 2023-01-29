@@ -15,11 +15,11 @@ function handleResize() {
 }
 
 export default function disableResizeAnimations() {
-  useEffect(() => {
-    window.addEventListener('resize', () => handleResize())
+  // useEffect(() => {
+  //   window.addEventListener('resize', () => handleResize())
 
-    return () => {
-      window.removeEventListener('resize', () => handleResize())
-    }
-  }, [])
+  //   return () => {
+  //     window.removeEventListener('resize', () => handleResize())
+  //   }
+  // }, [])
 }

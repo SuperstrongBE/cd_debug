@@ -1,3 +1,4 @@
+"use client"
 import WelcomePage from '@/components/layout/Page/WelcomePage'
 import classnames from 'classnames'
 import { Card } from '@/components/layout'
@@ -15,9 +16,8 @@ import Image from "next/legacy/image";
 
 const Welcome = () => {
   return (
-    <WelcomePage
-      children={
-        <>
+      <WelcomePage>
+          <>
           <WelcomeCard />
           <RoadmapCard />
 
@@ -43,8 +43,8 @@ const Welcome = () => {
           {/* TREASURY */}
           <Card id="treasury" className="col-span-2" title="Treasury" />
         </>
-      }
-    />
+      
+    </WelcomePage>
   )
 }
 

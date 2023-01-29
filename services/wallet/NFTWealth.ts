@@ -24,7 +24,7 @@ export async function fetchNFTWealth(actorName: string): Promise<NFT.INftPortfol
             if (!foundTokenRate) return nftsList;
             if (!foundNftPrice) return nftsList;
             const nftMedianPrice = parseInt(foundNftPrice.median);
-            const toPrecisionNFTMedian = applyPrecision(nftMedianPrice, foundNftPrice.token_precision);
+            const toPrecisionNFTMedian =  applyPrecision(nftMedianPrice, foundNftPrice.token_precision);
             fiatsList.push({
                 quote: fiat.symbol,
                 amount: toPrecisionNFTMedian * foundTokenRate.price * fiat.rate

@@ -65,7 +65,7 @@ const ListCard = ({
           )}>
           <ConditionalWrapper
             condition={groups}
-            wrapper={children => <GroupContainer children={children} />}>
+            wrapper={children => <GroupContainer>{children}</GroupContainer>}>
             <div className="flex flex-col">
               {items.map((item, index) => {
                 return <Item item={item} key={index} />

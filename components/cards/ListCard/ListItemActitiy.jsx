@@ -1,3 +1,6 @@
+import Link from "next/link"
+import { BiArrowToBottom, BiPackage } from "react-icons/bi"
+
 const ListItemActivity = ({ item }) => {
   return (
     <Link legacyBehavior href="/">

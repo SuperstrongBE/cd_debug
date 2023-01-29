@@ -75,7 +75,7 @@ export default function Calendar({
     return normalizedIndex
   }
 
-  const selectedEvents = useMemo(() => {
+  const selectedEvents = [];/*useMemo(() => {
     // @Wirehead this memoization is not required but if the data gets heavier it's good to only do it once per data fetch instead of on every render
 
     let selectedDayObj = parseISO(selectedDay)
@@ -89,12 +89,12 @@ export default function Calendar({
         normalizedIndex >= event.startAtIndex &&
         normalizedIndex <= event.endAtIndex,
     )
-  }, [selectedDay, parsedEvents])
+  }, [selectedDay, parsedEvents])*/
 
-  const highlightedEvents = useMemo(() => {
-    if (!highlightedDay) {
-      return []
-    }
+  const highlightedEvents = []/*;useMemo(() => {
+    // if (!highlightedDay) {
+    //   return []
+    // }
 
     let highlightedDayObj = parseISO(highlightedDay)
     let index = getDay(highlightedDayObj)
@@ -105,7 +105,7 @@ export default function Calendar({
         normalizedIndex >= event.startAtIndex &&
         normalizedIndex <= event.endAtIndex,
     )
-  }, [highlightedDay, parsedEvents])
+  }, [highlightedDay, parsedEvents])*/
 
   //   console.log(parsedEvents)
 
@@ -133,14 +133,14 @@ export default function Calendar({
             }}
             onPointerEnter={() => setHighlightedDay(day)}
             onPointerLeave={() => setHighlightedDay(null)}
-            // onPointerEnter={() => setSelectedDay(day)}
-            // onPointerLeave={() => setSelectedDay(null)}
-            // onClick={e => {
-            //   alert(
-            //     'selected events: ' +
-            //       selectedEvents.map(event => event.name).join(', '),
-            //   )
-            // }}
+          // onPointerEnter={() => setSelectedDay(day)}
+          // onPointerLeave={() => setSelectedDay(null)}
+          // onClick={e => {
+          //   alert(
+          //     'selected events: ' +
+          //       selectedEvents.map(event => event.name).join(', '),
+          //   )
+          // }}
           >
             <h2
               className={cx(

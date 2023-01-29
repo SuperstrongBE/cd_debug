@@ -28,7 +28,7 @@ function CommonModal({
     }
   }, [])
 
-  const handleClose = (value: any) => {
+  const handleClose = (value) => {
     setOpen(false)
     resolveFn(value)
   }
@@ -47,13 +47,7 @@ function CommonModal({
   )
 }
 
-const activeModals: Record<
-  string,
-  {
-    id: string
-    cleanup: Function
-  }
-> = {}
+const activeModals = {}
 
 export async function hideAllModals() {
   const allModalIds = Object.keys(activeModals)

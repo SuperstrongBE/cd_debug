@@ -41,7 +41,7 @@ const DataWarning = ({ className, children }) => {
                   This is an alpha preview
                 </h2>
                 <p className="mb-1 font-light opacity-70">
-                  We're currently showing fake data, and you can't interact with
+                  We&lsquo;re currently showing fake data, and you can&lsquo;t interact with
                   anything.
                 </p>
 

@@ -32,7 +32,7 @@ const ResponsivePie = dynamic(
   },
 )
 
-const PortfolioCard = ({}) => {
+const PortfolioCard = ({ }) => {
   const { resolvedTheme } = useTheme()
 
   const [userTheme, setUserTheme] = useLocalStorage({
@@ -63,9 +63,8 @@ const PortfolioCard = ({}) => {
       <div className="flex flex-1 flex-nowrap rounded bg-slate-50/80 p-2.5 px-3 text-[0.8125rem] dark:bg-slate-400/10 mobile:leading-tight mobile-to-desktop:text-[1.5vw] desktop:grow-0 desktop:bg-transparent desktop:p-0 desktop:text-sm desktop:dark:bg-transparent desktop-to-wide:text-[1.2vw]">
         <div>
           <h3
-            className={`${
-              alignRight ? 'whitespace-nowrap desktop:float-right' : ''
-            } flex items-center gap-1.5 text-slate-500 dark:text-slate-50/40 mobile:text-[13px] mobile-to-desktop:text-[13px] wide:text-base `}>
+            className={`${alignRight ? 'whitespace-nowrap desktop:float-right' : ''
+              } flex items-center gap-1.5 text-slate-500 dark:text-slate-50/40 mobile:text-[13px] mobile-to-desktop:text-[13px] wide:text-base `}>
             {keyColor ? (
               <span
                 className="inline-flex h-1.5 w-1.5 rounded-full dark:shadow dark:shadow-black/10 wide:text-base"
@@ -85,17 +84,15 @@ const PortfolioCard = ({}) => {
             {title}
           </h3>
           <p
-            className={`${
-              alignRight ? 'desktop:float-right desktop:clear-both' : ''
-            }
+            className={`${alignRight ? 'desktop:float-right desktop:clear-both' : ''
+              }
           text-slate-700 dark:text-slate-50/60 2xl:text-lg wide:text-[1.0675rem]`}>
             {value}
           </p>
 
           <span
-            className={`${
-              alignRight ? 'desktop:float-right desktop:clear-both' : ''
-            }`}>
+            className={`${alignRight ? 'desktop:float-right desktop:clear-both' : ''
+              }`}>
             <ChangeIndicator
               className="mt-1"
               change={change}
@@ -190,10 +187,10 @@ const PortfolioCard = ({}) => {
       tabs={['January', '2023', 'All Time']}
       shortTabs={['Month', 'Year', 'All Time']}
       defaultTab={3}
-      // dropdownTabs={['Today', 'Week 28', 'July', '2022']}
-      // tabs={['All Time']}
-      // shortTabs={['All']}
-      // defaultTab={2}
+    // dropdownTabs={['Today', 'Week 28', 'July', '2022']}
+    // tabs={['All Time']}
+    // shortTabs={['All']}
+    // defaultTab={2}
     >
       <div className="p-6 py-4 pb-0">
         <div className="flex  w-full justify-between gap-4 pb-4 mobile:flex-col mobile-to-desktop:flex-col desktop:gap-6 desktop:pb-0 wide:pb-2">
@@ -249,8 +246,8 @@ const PortfolioCard = ({}) => {
                         resolvedTheme === 'light'
                           ? themeColors.slate['400']
                           : resolvedTheme === 'dark'
-                          ? themeColors.slate['50'] + '70'
-                          : '',
+                            ? themeColors.slate['50'] + '70'
+                            : '',
                     },
                   },
                 },
@@ -270,8 +267,8 @@ const PortfolioCard = ({}) => {
                       resolvedTheme === 'dark'
                         ? themeColors.slate['50']
                         : resolvedTheme === 'light'
-                        ? themeColors.slate['800']
-                        : '',
+                          ? themeColors.slate['800']
+                          : '',
                     strokeDasharray: 'none',
                     strokeWidth: 2,
                     strokeOpacity: 0.0725,
@@ -284,14 +281,14 @@ const PortfolioCard = ({}) => {
                       resolvedTheme === 'light'
                         ? themeColors.white
                         : resolvedTheme === 'dark'
-                        ? themeColors.slate['800'] + 'ea'
-                        : '',
+                          ? themeColors.slate['800'] + 'ea'
+                          : '',
                     color:
                       resolvedTheme === 'light'
                         ? themeColors.slate['700']
                         : resolvedTheme === 'dark'
-                        ? themeColors.slate['50']
-                        : '',
+                          ? themeColors.slate['50']
+                          : '',
                   },
                 },
               }}
@@ -391,8 +388,8 @@ const PortfolioCard = ({}) => {
                     resolvedTheme === 'light'
                       ? 'USDC'
                       : resolvedTheme === 'dark'
-                      ? 'USDC-Dark'
-                      : '',
+                        ? 'USDC-Dark'
+                        : '',
                 },
                 {
                   match: d => d.id === 'XPR',
@@ -400,8 +397,8 @@ const PortfolioCard = ({}) => {
                     resolvedTheme === 'light'
                       ? 'XPR'
                       : resolvedTheme === 'dark'
-                      ? 'XPR-Dark'
-                      : '',
+                        ? 'XPR-Dark'
+                        : '',
                 },
                 {
                   match: d => d.id === 'MTL',
@@ -409,8 +406,8 @@ const PortfolioCard = ({}) => {
                     resolvedTheme === 'light'
                       ? 'MTL'
                       : resolvedTheme === 'dark'
-                      ? 'MTL-Dark'
-                      : '',
+                        ? 'MTL-Dark'
+                        : '',
                 },
                 {
                   match: d => d.id === 'BTC',
@@ -418,8 +415,8 @@ const PortfolioCard = ({}) => {
                     resolvedTheme === 'light'
                       ? 'BTC'
                       : resolvedTheme === 'dark'
-                      ? 'BTC-Dark'
-                      : '',
+                        ? 'BTC-Dark'
+                        : '',
                 },
                 {
                   match: d => d.id === 'Other',
@@ -427,21 +424,21 @@ const PortfolioCard = ({}) => {
                     resolvedTheme === 'light'
                       ? 'Other'
                       : resolvedTheme === 'dark'
-                      ? 'Other-Dark'
-                      : '',
+                        ? 'Other-Dark'
+                        : '',
                 },
               ]}
               enableSlices="x"
               sliceTooltip={d => {
                 return <AreaSliceTooltip points={d.slice.points} />
               }}
-              // debugSlices={true}
-              // onMouseEnter={(_data, event) => {
-              //   event.target.style.fill = '#FF00FF'
-              // }}
-              // onMouseLeave={(_data, event) => {
-              //   event.target.style.fill = originalColor
-              // }}
+            // debugSlices={true}
+            // onMouseEnter={(_data, event) => {
+            //   event.target.style.fill = '#FF00FF'
+            // }}
+            // onMouseLeave={(_data, event) => {
+            //   event.target.style.fill = originalColor
+            // }}
             />
           </div>
 
@@ -477,15 +474,15 @@ const PortfolioCard = ({}) => {
                   resolvedTheme === 'light'
                     ? 1.1
                     : resolvedTheme === 'dark'
-                    ? 1.65
-                    : 0
+                      ? 1.65
+                      : 0
                 }
                 borderWidth={
                   resolvedTheme === 'light'
                     ? 0
                     : resolvedTheme === 'dark'
-                    ? 1.25
-                    : 0
+                      ? 1.25
+                      : 0
                 }
                 borderColor={{
                   from: 'color',
@@ -522,8 +519,8 @@ const PortfolioCard = ({}) => {
                           resolvedTheme === 'light'
                             ? themeColors.slate['400']
                             : resolvedTheme === 'dark'
-                            ? themeColors.slate['50'] + '70'
-                            : '',
+                              ? themeColors.slate['50'] + '70'
+                              : '',
                       },
                     },
                   },
@@ -543,8 +540,8 @@ const PortfolioCard = ({}) => {
                         resolvedTheme === 'dark'
                           ? themeColors.slate['50']
                           : resolvedTheme === 'light'
-                          ? themeColors.slate['800']
-                          : '',
+                            ? themeColors.slate['800']
+                            : '',
                       strokeDasharray: 'none',
                       strokeWidth: 2,
                       strokeOpacity: 0.0725,
@@ -557,14 +554,14 @@ const PortfolioCard = ({}) => {
                         resolvedTheme === 'light'
                           ? themeColors.white
                           : resolvedTheme === 'dark'
-                          ? themeColors.slate['800'] + 'ea'
-                          : '',
+                            ? themeColors.slate['800'] + 'ea'
+                            : '',
                       color:
                         resolvedTheme === 'light'
                           ? themeColors.slate['700']
                           : resolvedTheme === 'dark'
-                          ? themeColors.slate['50']
-                          : '',
+                            ? themeColors.slate['50']
+                            : '',
                     },
                   },
                 }}
@@ -592,9 +589,7 @@ const PortfolioCard = ({}) => {
                 enablePoints={false}
                 gridYValues={4}
                 // colors={d => Color(d.color).lighten(0.125).toString()}
-                colors={d => {
-                  return useHueRotate(d.color, defaultColor, themeColor)
-                }}
+                colors={"#aaee55"}
                 enableArea={true}
                 areaOpacity={1}
                 useMesh={true}
@@ -701,8 +696,8 @@ const PortfolioCard = ({}) => {
                       resolvedTheme === 'light'
                         ? 'Liquid'
                         : resolvedTheme === 'dark'
-                        ? 'Liquid-Dark'
-                        : '',
+                          ? 'Liquid-Dark'
+                          : '',
                   },
                   {
                     match: d => d.id === 'Borrowed',
@@ -710,8 +705,8 @@ const PortfolioCard = ({}) => {
                       resolvedTheme === 'light'
                         ? 'Borrowed'
                         : resolvedTheme === 'dark'
-                        ? 'Borrowed-Dark'
-                        : '',
+                          ? 'Borrowed-Dark'
+                          : '',
                   },
                   {
                     match: d => d.id === 'Staked',
@@ -719,8 +714,8 @@ const PortfolioCard = ({}) => {
                       resolvedTheme === 'light'
                         ? 'Staked'
                         : resolvedTheme === 'dark'
-                        ? 'Staked-Dark'
-                        : '',
+                          ? 'Staked-Dark'
+                          : '',
                   },
                   {
                     match: d => d.id === 'Farming',
@@ -728,8 +723,8 @@ const PortfolioCard = ({}) => {
                       resolvedTheme === 'light'
                         ? 'Farming'
                         : resolvedTheme === 'dark'
-                        ? 'Farming-Dark'
-                        : '',
+                          ? 'Farming-Dark'
+                          : '',
                   },
                   {
                     match: d => d.id === 'NFT Trading',
@@ -737,21 +732,21 @@ const PortfolioCard = ({}) => {
                       resolvedTheme === 'light'
                         ? 'NFTTrading'
                         : resolvedTheme === 'dark'
-                        ? 'NFTTrading-Dark'
-                        : '',
+                          ? 'NFTTrading-Dark'
+                          : '',
                   },
                 ]}
                 enableSlices="x"
                 sliceTooltip={d => {
                   return <AreaSliceTooltip points={d.slice.points} />
                 }}
-                // debugSlices={true}
-                // onMouseEnter={(_data, event) => {
-                //   event.target.style.fill = '#FF00FF'
-                // }}
-                // onMouseLeave={(_data, event) => {
-                //   event.target.style.fill = originalColor
-                // }}
+              // debugSlices={true}
+              // onMouseEnter={(_data, event) => {
+              //   event.target.style.fill = '#FF00FF'
+              // }}
+              // onMouseLeave={(_data, event) => {
+              //   event.target.style.fill = originalColor
+              // }}
               />
             </div>
 
@@ -792,22 +787,12 @@ const PortfolioCard = ({}) => {
                   theme={{
                     fontSize: 14.5,
                   }}
-                  colors={d => {
-                    return useHueRotate(
-                      d.data.fillColor,
-                      defaultColor,
-                      themeColor,
-                    )
-                  }}
+                  colors={"#aaee55"}
                   arcLabel={d => {
                     return d.value + '%'
                   }}
                   arcLabelsTextColor={d => {
-                    return useHueRotate(
-                      d.data.textColor,
-                      defaultColor,
-                      themeColor,
-                    )
+                    colors = "#aaee55"
                   }}
                   innerRadius={0.5}
                   animate={false}
@@ -818,15 +803,15 @@ const PortfolioCard = ({}) => {
                     resolvedTheme === 'light'
                       ? 1.1
                       : resolvedTheme === 'dark'
-                      ? 1.65
-                      : 0
+                        ? 1.65
+                        : 0
                   }
                   borderWidth={
                     resolvedTheme === 'light'
                       ? 0
                       : resolvedTheme === 'dark'
-                      ? 1.25
-                      : 0
+                        ? 1.25
+                        : 0
                   }
                   borderColor={{
                     from: 'color',

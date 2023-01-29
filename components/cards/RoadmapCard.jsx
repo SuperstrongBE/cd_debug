@@ -155,14 +155,14 @@ const RoadmapCard = ({ className }) => {
             tag={
               <TagLabel className="ml-2" label="In Progress" color="blue" />
             }>
-            We're currently talking to a senior engineer that will help us built
+            We&lsquo;re currently talking to a senior engineer that will help us built
             a solid base that can deal with a ton of live data.
           </Item>
           <Item
             title="Look for CTO"
             tag={<TagLabel className="ml-2" label="Next" color="gray" />}>
             Cyberdeck is currently being built by one founder and one
-            contractor. We'll soon look around in our close network for someone
+            contractor. We&lsquo;ll soon look around in our close network for someone
             suitable.
           </Item>
         </div>
