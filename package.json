@@ -1,0 +1,29 @@
+{
+  "name": "cd_debug",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/font": "13.1.6",
+    "@proton/web-sdk": "^4.2.8",
+    "@types/node": "18.11.18",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "bufferutil": "^4.0.7",
+    "encoding": "^0.1.13",
+    "eslint": "8.33.0",
+    "eslint-config-next": "13.1.6",
+    "next": "13.1.6",
+    "node-fetch": "^3.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "save": "^2.9.0",
+    "typescript": "4.9.4",
+    "utf-8-validate": "^5.0.10"
+  }
+}
